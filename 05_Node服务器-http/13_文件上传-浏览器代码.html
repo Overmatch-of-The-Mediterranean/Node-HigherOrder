@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+</head>
+
+<body>
+    <input type="file">
+    <button>上传</button>
+    <script>
+        const inputEl = document.querySelector('input')
+        const btnEl = document.querySelector('button')
+
+        btnEl.onclick = function () {
+            const formData = new FormData()
+
+            formData.set('photo', inputEl.files[0])
+
+            axios({
+                method: 'POST',
+                url: 'http://localhost:8000',
+                data: formData,
+                headers: {
+                    'Content-Type': 'multipart/form-data;'
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
