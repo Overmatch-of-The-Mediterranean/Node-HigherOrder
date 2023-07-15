@@ -4,8 +4,8 @@ const connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
   user: 'root',
-  password: 'qsq020614',
-  database: 'user'
+  password: '***',
+  database: '***'
 });
 
 const statement = `INSERT INTO products SET ?;`
